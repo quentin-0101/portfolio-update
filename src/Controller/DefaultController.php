@@ -24,13 +24,45 @@ class DefaultController extends AbstractController
         ]);
     }
 
-    #[Route('/wazuh', name: 'app_details')]
-    public function details(): Response
+    #[Route('/wazuh', name: 'app_wazuh')]
+    public function wazuh(): Response
     {
         return $this->render('default/wazuh.html.twig', [
             'controller_name' => 'DefaultController',
         ]);
     }
+
+    #[Route('/web', name: 'app_web')]
+    public function web(): Response
+    {
+        return $this->render('default/sidebar.html.twig', [
+            'controller_name' => 'DefaultController',
+        ]);
+    }
+
+    #[Route('/backup-system', name: 'app_backup')]
+    public function backup(): Response
+    {
+        return $this->render('default/backup.html.twig', [
+            'controller_name' => 'DefaultController',
+        ]);
+    }
+
+    #[Route('/replication-mariadb', name: 'app_mariadb')]
+    public function mariadb(): Response
+    {
+        return $this->render('default/mariadb.html.twig', [
+            'controller_name' => 'DefaultController',
+        ]);
+    }
+    #[Route('/replication-postgresql', name: 'app_postgresql')]
+    public function postgresql(): Response
+    {
+        return $this->render('default/postgresql.html.twig', [
+            'controller_name' => 'DefaultController',
+        ]);
+    }
+
 
     /**
      * @throws TransportExceptionInterface

@@ -1,0 +1,226 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Portfolio Quentin Gauny{% endblock %}
+
+{% block body %}
+
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+        <title>Portfolio Details - iPortfolio Bootstrap Template</title>
+        <meta content="" name="description">
+        <meta content="" name="keywords">
+
+        <!-- Favicons -->
+        <link href="assets/img/favicon.png" rel="icon">
+        <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+        <!-- Vendor CSS Files -->
+        <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+        <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+        <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+        <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+        <!-- Template Main CSS File -->
+        <link href="assets/css/style.css" rel="stylesheet">
+
+        <!-- =======================================================
+        * Template Name: iPortfolio
+        * Updated: Sep 18 2023 with Bootstrap v5.3.2
+        * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+        * Author: BootstrapMade.com
+        * License: https://bootstrapmade.com/license/
+        ======================================================== -->
+    </head>
+
+    <body>
+
+    <!-- ======= Mobile nav toggle button ======= -->
+    <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+    <!-- ======= Header ======= -->
+    <header id="header">
+        <div class="d-flex flex-column">
+
+            <div class="profile">
+                <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
+                <h1 class="text-light"><a href="index.html">Quentin Gauny</a></h1>
+                <div class="social-links mt-3 text-center">
+                    <a href="https://www.linkedin.com/in/quentin-gauny-1513a5203/" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                </div>
+            </div>
+
+            <nav id="navbar" class="nav-menu navbar">
+                <ul>
+                    <li><a href="/#hero" class="nav-link scrollto"><i class="bx bx-home"></i> <span>Home</span></a></li>
+                    <li><a href="/#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>À Propos</span></a></li>
+                    <li><a href="/#portfolio" class="nav-link scrollto active"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
+                    <li><a href="/#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Expériences</span></a></li>
+                    <li><a href="/#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+
+                </ul>
+            </nav><!-- .nav-menu -->
+        </div>
+    </header><!-- End Header -->
+
+    <main id="main">
+
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2>Développement d'un système de sauvegarde</h2>
+                    <ol>
+                        <li><a href="/">Home</a></li>
+                        <li>Développement d'un système de sauvegarde</li>
+                    </ol>
+                </div>
+
+            </div>
+        </section><!-- End Breadcrumbs -->
+
+        <!-- ======= Portfolio Details Section ======= -->
+        <section id="portfolio-details" class="portfolio-details">
+            <div class="container">
+
+                <div class="row gy-4">
+
+                    <div class="col-lg-8">
+                        <div class="portfolio-details-slider swiper">
+                            <div class="align-items-center">
+
+
+                                <div class="">
+                                    <img src="assets/img/portfolio/backup.png" alt="">
+                                </div>
+
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        <div class="portfolio-description">
+                            <h2>Réalisation du challenge</h2>
+                            <p>
+                                Fonctionnement : <br>
+
+                                J’ai un client, et un serveur. La communication entre les 2 passes par une socket en qui utilise le chiffrement SSL / TLS 1.3
+                                <br>
+                                <br>
+                                Cas d’utilisation : <br>
+                                1ère étape, lancer le serveur : le serveur va créer sa base de donnée sqlite pour sauvegarder le chemin des fichiers qu’il recois, ainsi que la date de dernière modification. Enfin, comme le nom du fichier va être modifié coté serveur, il faut stocker le nouveau nom dans un champ slug
+
+                                Au final, dans la base de donnée, il y aura une table file qui contiendra les colonnes :  <br>
+                                    - path TEXT PRIMARY KEY <br>
+                                    - lastModification TEXT <br>
+                                    - slug TEXT
+
+                                <br><br>
+                                Quand on lance le client, on lui met plusieurs arguments afin de lui spécifier :
+                                l’ip du serveur
+                                le port utilisé par le serveur
+                                l’attribut “SYNCHRONIZE” pour spécifier au serveur qu’on veut sauvegarder des fichiers, ou “RESTORE” pour restaurer des fichiers
+                                le chemin du dossier qu’on veut sauvegarder
+                                le chemin vers le fichier de configuration des extensions à sauvegarder
+                                <br><br>
+                                Quand on lance le client en mode “SYNCHRONIZE”, le client va chercher tous les chemins des fichiers à sauvegarder, et les envoyer au serveur : le serveur, va voir si ces chemins existent dans le champs “path” de la base de donnée :
+                                si il n’existe pas, alors de fichier n’a jamais été sauvegardé, donc il va demander le fichier. Un premier paquet d’entête (de type  HEADER_FILE) est envoyé, qui contient le path ainsi que la date de modification. Puis, plein de paquet de type CONTENT_FILE  sont envoyé. Quand le serveur reçois un paquet de type FINISH_FILE pour lui dire que l’envoi du fichier est terminé. Le fichier va être découpé en paquet de 2048 bits, puis envoyé au serveur. Une fois que l’envoi est terminé, il va créer une nouvelle ligne en base avec le path, ainsi que la date de modification. Puis, il va renommer le fichier en remplaçant les “/” par des “_”.
+                                <br>
+                                si le fichier existe, il va comparer la date de dernière modification envoyé par le client, et celle stockée en base : si elle est différente, alors le fichier est différent, donc il doit être synchroniser. Sinon, le fichier n’a pas été modifié, donc le serveur ne demande pas le fichier.
+                                <br><br>
+                                Les fichiers sauvegardés par le serveur vont se créer dans le dossier “server_data”.
+                                <br><br>
+                                Maintenant, si le client a malheureusement supprimé / modifié  un fichier, et qu’il veut le récupérer, il peut lancer le programme client en mode RESTORE :
+                                Deux options s’offrent à lui :<br>
+                                Restaurer uniquement un seul fichier<br>
+                                Restaurer tous les fichiers qui ont été supprimés / modifié
+                                <br><br>
+                                Si le client ne veut restaurer qu’un seul fichier, il entre 1, puis le serveur va envoyer tous les chemins des fichiers sauvegardé. Le client copie colle le chemin complet du fichier qu’il veut, puis le fichier sera automatiquement créé et restauré.
+                                <br>
+                                Sinon, la seconde option, le serveur va envoyer tous les chemins et date de dernière modification des fichiers sauvegardé par le client ;
+                                le client va vérifier si le fichier existe :<br>
+                                si le fichier existe, il va comparer avec la date de dernière modification. Si la date est égale, alors le fichier n’a pas besoin d’être restauré. Sinon, si la date est différente, alors le fichier est supprimé, puis restauré
+                                si le fichier n’existe pas, il va être automatiquement restauré
+                                Le programme client a été conçu pour créer les dossiers manquant. Si on supprime un dossier, le programme de sauvegarde va recréer ce dossier, et recréer les fichiers.
+                                <br><br>
+                                Démonstration 1 : sauvegarde des fichiers .pdf et .txt uniquement, et restauration avec l’option n* 2 <br> => restauration automatique des fichiers manquants / supprimés
+                                <a target="_blank" href="https://youtu.be/uFI7KG9_InI">https://youtu.be/uFI7KG9_InI</a>
+                                <br><br>
+
+                                Démonstration 2 : sauvegarde des fichiers .pdf et .txt uniquement, et restauration avec l’option n* 1 <br> => restauration d’un seul fichier spécifique
+                                <a target="_blank" href="https://youtu.be/loISzU8Vrus">https://youtu.be/loISzU8Vrus</a>
+
+                                <br><br>
+                                lien pour accéder au projet
+                                <a href="https://github.com/quentin-0101/backup_client_serveur">https://github.com/quentin-0101/backup_client_serveur</a>
+
+
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="portfolio-info">
+                            <h3>Information du projet</h3>
+                            <ul>
+                                <li><strong>Catégorie</strong>: Développement & Système</li>
+                                <li><strong>Client</strong>: IUT</li>
+                                <li><strong>Outils & Technologies</strong>: C</li>
+                                <li><strong>Date</strong>: Décembre 2023 - Janvier 2024</li>
+                            </ul>
+                        </div>
+                        <div class="portfolio-description">
+                            <h2>Objectif</h2>
+                            <p>
+                                L'objectif est de développer un système de sauvegarde
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Portfolio Details Section -->
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>iPortfolio</span></strong>
+            </div>
+            <div class="credits">
+                <!-- All the links in the footer should remain intact. -->
+                <!-- You can delete the links only if you purchased the pro version. -->
+                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+        </div>
+    </footer><!-- End  Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/typed.js/typed.umd.js"></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+    </body>
+
+{% endblock %}
