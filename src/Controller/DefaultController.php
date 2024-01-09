@@ -15,10 +15,19 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends AbstractController
 {
+    // https://earnest-custard-8c663e.netlify.app/
     #[Route('/', name: 'app_default')]
     public function index(): Response
     {
         return $this->render('default/index.html.twig', [
+            'controller_name' => 'DefaultController',
+        ]);
+    }
+
+    #[Route('/wazuh', name: 'app_details')]
+    public function details(): Response
+    {
+        return $this->render('default/wazuh.html.twig', [
             'controller_name' => 'DefaultController',
         ]);
     }

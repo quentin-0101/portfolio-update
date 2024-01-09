@@ -57,9 +57,10 @@
         <ul>
           <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
           <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>À Propos</span></a></li>
+          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
           <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Expériences</span></a></li>
-      <!--    <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li> -->
-  <!--        <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li> -->
+
+          <!--        <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li> -->
           <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
         </ul>
       </nav><!-- .nav-menu -->
@@ -70,7 +71,7 @@
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
       <h1>Quentin Gauny</h1>
-      <p>compétences : <span class="typed" data-typed-items="DevOps, CyberSecurity, Web Developer, System engineer"></span></p>
+      <p>compétences : <span class="typed" data-typed-items="DevOps, CyberSécurité, Gestion Serveur, Développeur Web"></span></p>
     </div>
   </section><!-- End Hero -->
 
@@ -123,6 +124,17 @@
       </div>
     </section><!-- End About Section -->
 
+    <section id="skills" class="skills section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Mes Objectifs</h2>
+          <p>Après mon BUT Informatique, je souhaiterais intégrer l'école du CNAM à Montpellier en alternance, afin de me spécialiser et obtenir un MASTER en CyberSécurité.</p>
+        </div>
+      </div>
+    </section><!-- End Skills Section -->
+
+
     <!-- ======= Skills Section ======= -->
     <section id="skills" class="skills section-bg">
       <div class="container">
@@ -169,9 +181,9 @@
             </div>
 
             <div class="progress">
-              <span class="skill">BASH <i class="val">100%</i></span>
+              <span class="skill">BASH <i class="val">90%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
 
@@ -188,6 +200,79 @@
 
       </div>
     </section><!-- End Skills Section -->
+
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Portfolio</h2>
+          <!--     <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
+        </div>
+
+        <div class="row" data-aos="fade-up">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">Tous les projets</li>
+              <li data-filter=".filter-security">Sécurité</li>
+              <li data-filter=".filter-web">Symfony & VueJS</li>
+              <li data-filter=".filter-system">Système et Réseau</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+
+
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-security">
+            <a href="/wazuh">
+              <div class="portfolio-wrap">
+                  <img src="assets/img/portfolio/wazuh.png" class="img-fluid" alt="">
+              </div>
+            </a>
+          </div>
+
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <a href="/web">
+              <div class="portfolio-wrap">
+                <img src="assets/img/portfolio/symfony_vuejs.png" class="img-fluid" alt="">
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-system">
+            <a href="/backup-system">
+              <div class="portfolio-wrap">
+                <img src="assets/img/portfolio/backup.png" class="img-fluid" alt="">
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-system">
+            <a href="/replication-postgresql">
+              <div class="portfolio-wrap">
+                <img src="assets/img/portfolio/postgresql-replication.png" class="img-fluid" alt="">
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-system">
+            <a href="/replication-mariadb">
+              <div class="portfolio-wrap">
+                <img src="assets/img/portfolio/mariadb-replication.png" class="img-fluid" alt="">
+              </div>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Section -->
+
+
 
     <!-- ======= Resume Section ======= -->
     <section id="resume" class="resume">
@@ -219,6 +304,18 @@
             <h3 class="resume-title">Experience Professionnelle</h3>
             <div class="resume-item">
               <h4>Devops - Cybersécurité</h4>
+              <h5> 4 Septembre 2023 - aujourd’hui</h5>
+              <p><em>ALTERNANCE RepairSoft</em></p>
+              <ul>
+                <li>Responsable du bon fonctionnement des serveurs</li>
+                <li>Amélioration et application d'une politique de sécurité stricte</li>
+                <li>Responsable cybersécurité</li>
+                <li>Migration d'un Progiciel Symfony5 vers Symfony6</li>
+                <li>Développement PHP Symfony6, et VueJS</li>
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h4>Devops - Cybersécurité</h4>
               <h5> 3 Juillet 2023 - 4 aout 2023</h5>
               <p><em>CDD RepairSoft (Job d'été)</em></p>
               <ul>
@@ -226,6 +323,7 @@
                 <li>Mise en place d'un système de "metrics" Grafana  </li>
                 <li>Automatisation de plusieurs alertes en cas de disfonctionnement</li>
                 <li>Mise en place d'une réplication de base en temps réel pour Mysql</li>
+                <li>Développement PHP Symfony5, et VueJS</li>
               </ul>
             </div>
             <div class="resume-item">
@@ -242,7 +340,7 @@
                 <li>Audit de sécurité d'une application web</li>
                 <li>Application d'un cahier des charges strict sur la sécurité fourni par DARVA</li>
                 <li>Formation aux équipes de développeurs sur les risques d'une injection sql / répertoires non protégés</li>
-                <li>Développement PHP symfony, et VueJS</li>
+                <li>Développement PHP Symfony5, et VueJS</li>
                 <li>Optimisation des performances PHP, Apache, Mysql, et Postgresql avec une configuration sur mesure</li>
 
               </ul>
