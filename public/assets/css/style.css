@@ -1115,3 +1115,15 @@ section {
   background-color: #f44336; /* Rouge pour les erreurs */
   color: #fff;
 }
+
+.cv{
+  display: inline-block;
+  background-color: #252525;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+}
+.cv:hover {
+  background-color: #2980b9;
+}
